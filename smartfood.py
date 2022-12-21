@@ -60,10 +60,10 @@ def opcao2(message):
 def fit(message):
     
     day = datetime.date.today().weekday()
-    #Fim de semana
+#Fim de semana
     if day == 5  or day == 6:
         bot.send_message(message.chat.id, text_weeknd)
-    #Segunda
+#Segunda
     if day == 0:
         text_fit_segunda = """
 Ótima escolha!!
@@ -81,7 +81,7 @@ Prato 1: /Opcao1
 Prato 2: /Opcao2
 Voltar ao inicio: /Inicio""".format(fit_segunda[0][0], fit_segunda[0][1], fit_segunda[1][0], fit_segunda[1][1])
         bot.send_message(message.chat.id, text_fit_segunda)
-    #Terça
+#Terça
     if day == 1:
         text_fit_terca = """
 Ótima escolha!!
@@ -99,7 +99,7 @@ Prato 1: /Opcao1
 Prato 2: /Opcao2
 Voltar ao inicio: /Inicio""".format(fit_terca[0][0], fit_terca[0][1], fit_terca[1][0], fit_terca[1][1])
         bot.send_message(message.chat.id, text_fit_terca)
-    #Quarta
+#Quarta
     if day == 2:
         text_fit_quarta = """
 Ótima escolha!!
@@ -117,7 +117,7 @@ Prato 1: /Opcao1
 Prato 2: /Opcao2
 Voltar ao inicio: /Inicio""".format(fit_quarta[0][0], fit_quarta[0][1], fit_quarta[1][0], fit_quarta[1][1])
         bot.send_message(message.chat.id, text_fit_quarta)
-    #Quinta
+#Quinta
     if day == 3:
         text_fit_quinta = """
 Ótima escolha!!
@@ -135,7 +135,7 @@ Prato 1: /Opcao1
 Prato 2: /Opcao2
 Voltar ao inicio: /Inicio""".format(fit_quinta[0][0], fit_quinta[0][1], fit_quinta[1][0], fit_quinta[1][1])
         bot.send_message(message.chat.id, text_fit_quinta)
-    #Sexta
+#Sexta
     if day == 4:
         text_fit_sexta = """
 Ótima escolha!!
@@ -159,15 +159,15 @@ Voltar ao inicio: /Inicio""".format(fit_sexta[0][0], fit_sexta[0][1], fit_sexta[
 @bot.message_handler(commands = ["LowCarb"])
 def lowcarb(message):
     day = datetime.date.today().weekday()
-    #Fim de semana
+#Fim de semana
     if day == 5  or day == 6:
         bot.send_message(message.chat.id, text_weeknd)
-    #Segunda
+#Segunda
     if day == 0:
         text_lowc_segunda = """
 Ótima escolha!!
 
-Hoje temos duas opções de marmita:
+Hoje temos a seguinte opção de marmita:
 
 1.  Prato 1: {0} 
     Tabela Nutricional: {1} 
@@ -177,12 +177,12 @@ Selecione a opção desejada para prosseguir no pedido:
 Prato 1: /Opcao1
 Voltar ao inicio: /Inicio""".format(low_segunda[0], low_segunda[1])
         bot.send_message(message.chat.id, text_lowc_segunda)
-    #Terça
+#Terça
     if day == 1:
         text_lowc_terca = """
 Ótima escolha!!
 
-Hoje temos duas opções de marmita:
+Hoje temos a seguinte opção de marmita:
 
 1.  Prato 1: {0} 
     Tabela Nutricional: {1} 
@@ -192,12 +192,12 @@ Selecione a opção desejada para prosseguir no pedido:
 Prato 1: /Opcao1
 Voltar ao inicio: /Inicio""".format(low_terca[0], low_terca[1])
         bot.send_message(message.chat.id, text_lowc_terca)
-    #Quarta
+#Quarta
     if day == 2:
         text_lowc_quarta = """
 Ótima escolha!!
 
-Hoje temos duas opções de marmita:
+Hoje temos a seguinte opção de marmita:
 
 1.  Prato 1: {0} 
     Tabela Nutricional: {1} 
@@ -207,12 +207,12 @@ Selecione a opção desejada para prosseguir no pedido:
 Prato 1: /Opcao1
 Voltar ao inicio: /Inicio""".format(low_quarta[0], low_quarta[1])
         bot.send_message(message.chat.id, text_lowc_quarta)
-    #Quinta
+#Quinta
     if day == 3:
         text_lowc_quinta = """
 Ótima escolha!!
 
-Hoje temos duas opções de marmita:
+Hoje temos a seguinte opção de marmita:
 
 1.  Prato 1: {0} 
     Tabela Nutricional: {1} 
@@ -222,12 +222,12 @@ Selecione a opção desejada para prosseguir no pedido:
 Prato 1: /Opcao1
 Voltar ao inicio: /Inicio""".format(low_quinta[0], low_quinta[1])
         bot.send_message(message.chat.id, text_lowc_quinta)
-    #Sexta
+#Sexta
     if day == 4:
         text_lowc_sexta = """
 Ótima escolha!!
 
-Hoje temos duas opções de marmita:
+Hoje temos a seguinte opção de marmita:
 
 1.  Prato 1: {0} 
     Tabela Nutricional: {1} 
@@ -242,7 +242,85 @@ Voltar ao inicio: /Inicio""".format(low_sexta[0], low_sexta[1])
 
 @bot.message_handler(commands = ["ZeroLact"])
 def zerolact(message):
-    pass
+    day = datetime.date.today().weekday()
+#Fim de semana
+    if day == 5  or day == 6:
+        bot.send_message(message.chat.id, text_weeknd)
+#Segunda
+    if day == 0:
+        text_zero_segunda = """
+Ótima escolha!!
+
+Hoje temos a seguinte opção de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(zero_segunda[0], zero_segunda[1])
+        bot.send_message(message.chat.id, text_zero_segunda)
+#Terça
+    if day == 1:
+        text_zero_terca = """
+Ótima escolha!!
+
+Hoje temos a seguinte opção de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(zero_terca[0], zero_terca[1])
+        bot.send_message(message.chat.id, text_zero_terca)
+#Quarta
+    if day == 2:
+        text_zero_quarta = """
+Ótima escolha!!
+
+Hoje temos a seguinte opção de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(zero_quarta[0], zero_quarta[1])
+        bot.send_message(message.chat.id, text_zero_quarta)
+#Quinta
+    if day == 3:
+        text_zero_quinta = """
+Ótima escolha!!
+
+Hoje temos a seguinte opção de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(zero_quinta[0], zero_quinta[1])
+        bot.send_message(message.chat.id, text_zero_quinta)
+#Sexta
+    if day == 4:
+        text_zero_sexta = """
+Ótima escolha!!
+
+Hoje temos a seguinte opção de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(zero_sexta[0], zero_sexta[1])
+        bot.send_message(message.chat.id, text_zero_sexta)
 
 #Verificador de recebimento de mensagem
 def verify(message):
