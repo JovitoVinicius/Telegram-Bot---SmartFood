@@ -19,7 +19,8 @@ Quarta-feira;
 Quinta-feira;
 Sexta-feira; 
 
-Fim de semana e feriado, atendimento apenas em nossas franquias! 
+Fim de semana e feriado, atendimento apenas em nossas franquias!
+Voltar ao inicio - /Inicio 
 """
 #Cardápio Fit
 
@@ -28,6 +29,22 @@ fit_terca = [["Frango grelhado, arroz colorido, legumes salteados e salada","Car
 fit_quarta = [["Costela cozida, arroz, feijão carioca, legumes salteados e salada","Carboidratos: 170g | Proteinas: 143g | Fibra: 100g"],["Paqueca de frango com legumes salteados","Carboidratos: 170g | Proteinas: 180g | Fibra: 90g"]]
 fit_quinta = [["Costela de porco, arroz com ervilha, legumes salteados","Carboidratos: 146g | Proteinas: 129g | Fibra: 100g"],["Salada verde com crotons e frango em cubos","Carboidratos: 100g | Proteinas: 180g | Fibra: 150g"]]
 fit_sexta = [["Risoto de camarão com aspargos","Carboidratos: 130g | Proteinas: 115g | Fibra: 98g"],["Salada de mix de folhas, frango em cubos e legumes cozidos","Carboidratos: 150g | Proteinas: 150g | Fibra: 130g"]]
+
+#Cardápio Low
+
+low_segunda = ["Macarrão de abobrinha a bolonhesa","Carboidratos: 60g | Proteinas: 100g | Fibra: 50g"]
+low_terca = ["Escondidinho de carne","Carboidratos: 90g | Proteinas: 130g | Fibra: 80g"]
+low_quarta = ["Sanduiche natural de atum","Carboidratos: 65g | Proteinas: 90g | Fibra: 150g"]
+low_quinta = ["Tiras de frango com molho especial","Carboidratos: 30g | Proteinas: 150g | Fibra: 100g"]
+low_sexta = ["Quibe assado","Carboidratos: 69g | Proteinas: 150g | Fibra: 100g"]
+
+#Cardápio ZeroLactose
+
+zero_segunda = ["Nhoque de abóbora com molho caseiro","Carboidratos: 190g | Proteinas: 30g | Fibra: 70g"]
+zero_terca = ["Omelete de frango e tomate confit","Carboidratos: 80g | Proteinas: 170g | Fibra: 80g"]
+zero_quarta = ["Beringela recheada com frango e especiarias","Carboidratos: 60g | Proteinas: 110g | Fibra: 90g"]
+zero_quinta = ["Bolinho de abobora e cenoura","Carboidratos: 150g | Proteinas: 30g | Fibra: 90g"]
+zero_sexta = ["Salada verde com legumes e frango em cubos","Carboidratos: 120g | Proteinas: 90g | Fibra: 80g"]
 
 #Comando Opções
 @bot.message_handler(commands = ["Opcao1"])
@@ -137,9 +154,91 @@ Prato 2: /Opcao2
 Voltar ao inicio: /Inicio""".format(fit_sexta[0][0], fit_sexta[0][1], fit_sexta[1][0], fit_sexta[1][1])
         bot.send_message(message.chat.id, text_fit_sexta)
 
+#Comando LowCarb
+
 @bot.message_handler(commands = ["LowCarb"])
 def lowcarb(message):
-    pass
+    day = datetime.date.today().weekday()
+    #Fim de semana
+    if day == 5  or day == 6:
+        bot.send_message(message.chat.id, text_weeknd)
+    #Segunda
+    if day == 0:
+        text_lowc_segunda = """
+Ótima escolha!!
+
+Hoje temos duas opções de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(low_segunda[0], low_segunda[1])
+        bot.send_message(message.chat.id, text_lowc_segunda)
+    #Terça
+    if day == 1:
+        text_lowc_terca = """
+Ótima escolha!!
+
+Hoje temos duas opções de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(low_terca[0], low_terca[1])
+        bot.send_message(message.chat.id, text_lowc_terca)
+    #Quarta
+    if day == 2:
+        text_lowc_quarta = """
+Ótima escolha!!
+
+Hoje temos duas opções de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(low_quarta[0], low_quarta[1])
+        bot.send_message(message.chat.id, text_lowc_quarta)
+    #Quinta
+    if day == 3:
+        text_lowc_quinta = """
+Ótima escolha!!
+
+Hoje temos duas opções de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(low_quinta[0], low_quinta[1])
+        bot.send_message(message.chat.id, text_lowc_quinta)
+    #Sexta
+    if day == 4:
+        text_lowc_sexta = """
+Ótima escolha!!
+
+Hoje temos duas opções de marmita:
+
+1.  Prato 1: {0} 
+    Tabela Nutricional: {1} 
+
+Selecione a opção desejada para prosseguir no pedido:
+
+Prato 1: /Opcao1
+Voltar ao inicio: /Inicio""".format(low_sexta[0], low_sexta[1])
+        bot.send_message(message.chat.id, text_lowc_sexta)
+
+#Comando ZeroLact
 
 @bot.message_handler(commands = ["ZeroLact"])
 def zerolact(message):
