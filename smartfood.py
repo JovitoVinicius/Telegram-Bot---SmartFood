@@ -7,6 +7,9 @@ api_key = "5699899917:AAFMgm4zV-vKDAHKF4usTq9ijvUqtEBilTM"
 #Inicializando bot de acordo com a key
 bot = telebot.TeleBot(api_key)
 
+
+chat_id = 984348343
+text = "teste"
 #Variaveis Globais
 day = 0
 #day = datetime.date.today().weekday()
@@ -107,10 +110,10 @@ zero_sexta = ["Salada verde com legumes e frango em cubos","Carboidratos: 120g |
 def alterar(message):
     pass
 
-#Comando Concluir
+#Comando Concluir  - 984348343
 @bot.message_handler(commands = ["Concluir"])
 def concluir(message):
-    pass
+    bot.send_message(chat_id, text)
 
 #Comando Opções
 @bot.message_handler(commands = ["Opcao1"])
@@ -119,9 +122,9 @@ def opcao1(message):
 #Fit
     if typefood == 0:
         if day == 0:
-            print(quantidadefoodfit)
+            print(message.chat.id)
             bot.send_message(message.chat.id, text_quantidade)
-            quantidadefoodfit = message.text
+            #quantidadefoodfit = message.text
             print(quantidadefoodfit)
             orderfit[0] = fit_segunda[0][0]
             
